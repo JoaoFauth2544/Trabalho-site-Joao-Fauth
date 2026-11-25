@@ -1,62 +1,112 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato - ETS2</title>
-    <link rel="stylesheet" href="../css/estilo.css">
-    <link rel="stylesheet" href="../css/contato.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Euro Truck Simulator 2 - Contato</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/estilo.css">
 </head>
-<body>
+<body class="bg-dark text-light d-flex flex-column min-vh-100">
 
+  <!-- MENU DE NAVEGAÇÃO + LOGO -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-warning sticky-top shadow">
     <div class="container">
-        
-        <div class="capa-container">
-            <img src="../img/ets2_banner.jpg" alt="Euro Truck Simulator 2 Banner">
-        </div>
-
-        <nav class="menu">
-            <ul>
-                <li><a href="home.html">Início</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
-                <li><a href="contato.html">Contato</a></li>
-            </ul>
-        </nav>
-
-        <h1>Fale Conosco</h1>
-        <p>Escolha o canal de sua preferência ou preencha o formulário abaixo.</p>
-        
-        <div class="contato-cards">
-            <div class="card">
-                <h3>E-mail</h3>
-                <a href="mailto:2024302495@aluno.sertao.ifrs.edu.br">2024302495@aluno.sertao.ifrs.edu.br</a>
-            </div>
-            <div class="card">
-                <h3>WhatsApp</h3>
-                <a href="https://wa.me/5554999799197" target="_blank">(54) 999799197</a>
-            </div>
-        </div>
-
-        <div class="formulario-secao">
-            <h2>Mande uma mensagem</h2>
-            <form class="form-contato">
-                <div class="grupo-input">
-                    <label>Nome Completo</label>
-                    <input type="text" placeholder="Ex: João Vitor I. Fauth" required>
-                </div>
-                <div class="grupo-input">
-                    <label>E-mail para resposta</label>
-                    <input type="email" placeholder="seu@email.com" required>
-                </div>
-                <div class="grupo-input">
-                    <label>Sua Mensagem</label>
-                    <textarea placeholder="Como podemos ajudar?" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn-enviar">Enviar Agora</button>
-            </form>
-        </div>
-
+      <a class="navbar-brand fw-bold text-warning d-flex align-items-center" href="home.html">
+        <span class="badge bg-warning text-dark me-2">ETS2</span>
+        <span>BRASIL LOGÍSTICA</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuPrincipal">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="home.html">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre o Jogo</a></li>
+          <li class="nav-item"><a class="nav-link active text-warning fw-semibold" href="contato.html">Contato</a></li>
+        </ul>
+      </div>
     </div>
+  </nav>
 
+  <!-- FORMULÁRIO DE CONTATO -->
+  <main class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-7">
+        <div class="card bg-black border-secondary shadow">
+          <div class="card-body p-4">
+            <h2 class="fw-bold text-warning mb-3">Fale Conosco</h2>
+            <p class="text-secondary mb-4">Tem dúvidas sobre comboios, mods ou quer sugerir uma rota? Envie sua mensagem.</p>
+
+            <form id="formContato" class="needs-validation" novalidate>
+              <div class="mb-3">
+                <label for="contatoNome" class="form-label">Nome Completo</label>
+                <input type="text" class="form-control bg-dark text-light border-secondary" id="contatoNome" required>
+                <div class="invalid-feedback">Por favor, preencha seu nome.</div>
+              </div>
+              <div class="mb-3">
+                <label for="contatoEmail" class="form-label">E-mail</label>
+                <input type="email" class="form-control bg-dark text-light border-secondary" id="contatoEmail" required>
+                <div class="invalid-feedback">Informe um endereço de e-mail válido.</div>
+              </div>
+              <div class="mb-3">
+                <label for="contatoMensagem" class="form-label">Mensagem</label>
+                <textarea class="form-control bg-dark text-light border-secondary" id="contatoMensagem" rows="4" required></textarea>
+                <div class="invalid-feedback">Escreva uma mensagem antes de enviar.</div>
+              </div>
+              <button type="submit" class="btn btn-warning fw-bold w-100">Enviar Mensagem</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- MODAL DE CONFIRMAÇÃO -->
+  <div class="modal fade" id="modalContato" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-light border-warning">
+        <div class="modal-header border-secondary">
+          <h5 class="modal-title text-warning fw-bold">Mensagem Enviada!</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          Sua mensagem foi enviada com sucesso! Em breve retornaremos o contato.
+        </div>
+        <div class="modal-footer border-secondary">
+          <button type="button" class="btn btn-warning fw-bold" data-bs-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RODAPÉ -->
+  <footer class="bg-black text-secondary py-4 mt-auto border-top border-secondary">
+    <div class="container text-center">
+      <p class="mb-1 text-light fw-semibold">Projeto Euro Truck Simulator 2 — Desenvolvido por João Fauth</p>
+      <small>Instituto Federal do Rio Grande do Sul (IFRS) • Desenvolvimento Web com Bootstrap 5</small>
+    </div>
+  </footer>
+
+  <script src="../js/bootstrap.bundle.min.js"></script>
+  <script>
+    (() => {
+      'use strict';
+      const form = document.getElementById('formContato');
+      const modal = new bootstrap.Modal(document.getElementById('modalContato'));
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (form.checkValidity()) {
+          modal.show();
+          form.reset();
+          form.classList.remove('was-validated');
+        } else {
+          form.classList.add('was-validated');
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
