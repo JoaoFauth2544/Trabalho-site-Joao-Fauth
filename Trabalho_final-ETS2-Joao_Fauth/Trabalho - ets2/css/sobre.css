@@ -32,3 +32,58 @@
     border: 1px dashed #3498db;
     width: 100%;
 }
+/* Altura controlada para o banner do carrossel */
+.banner-img {
+  height: 460px;
+  object-fit: cover;
+  filter: brightness(0.75);
+}
+
+/* Imagens dos cards */
+.card-img-custom {
+  height: 190px;
+  object-fit: cover;
+}
+
+/* Efeito de transição nos Cards */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(255, 193, 7, 0.25);
+  border-color: #ffc107 !important;
+}
+
+/* Estrutura de textos com efeitos de transição */
+.texto-transicao {
+  transition: color 0.35s ease, transform 0.35s ease, letter-spacing 0.35s ease;
+}
+
+.texto-transicao:hover {
+  color: #ffffff !important;
+  transform: translateX(4px);
+}
+
+/* Animação de entrada suave no texto do banner */
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 576px) {
+  .banner-img {
+    height: 300px;
+  }
+}

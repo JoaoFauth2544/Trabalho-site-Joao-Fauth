@@ -1,108 +1,120 @@
+/* Base clara e legível */
 body {
-    background-color: #f1f5f9;
-    color: #1e293b;
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  background-color: #f4f6f9;
+  color: #212529;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Barra de Navegação */
-.navbar-custom {
-    background-color: #0f172a;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+/* Cabeçalho azul-marinho com texto branco */
+.navbar-ets {
+  background-color: #1b365d;
+  border-bottom: 3px solid #e67e22;
 }
 
-.navbar-custom .navbar-brand {
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    color: #38bdf8 !important;
+.navbar-ets .navbar-brand,
+.navbar-ets .nav-link {
+  color: #ffffff !important;
 }
 
-.navbar-custom .nav-link {
-    color: #e2e8f0 !important;
-    font-weight: 500;
-    padding: 0.5rem 1rem !important;
-    border-radius: 6px;
-    transition: background-color 0.2s, color 0.2s;
+.navbar-ets .nav-link {
+  padding: 0.5rem 0.9rem !important;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
 }
 
-.navbar-custom .nav-link:hover,
-.navbar-custom .nav-link.active {
-    background-color: rgba(56, 189, 248, 0.15);
-    color: #38bdf8 !important;
+.navbar-ets .nav-link:hover,
+.navbar-ets .nav-link.active {
+  background-color: rgba(255, 255, 255, 0.18);
+  font-weight: 600;
 }
 
-/* Banner Principal */
-.banner-wrapper {
-    position: relative;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.15);
+/* Carrossel / Banner */
+.banner-img {
+  height: 410px;
+  object-fit: cover;
+  filter: brightness(0.62);
 }
 
-.banner-wrapper img {
-    width: 100%;
-    max-height: 380px;
-    object-fit: cover;
-    display: block;
+.banner-caixa {
+  background-color: rgba(27, 54, 93, 0.92);
+  border-left: 5px solid #e67e22;
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  max-width: 660px;
+  margin: 0 auto;
 }
 
-/* Títulos de Seção */
-.section-title {
-    font-weight: 700;
-    color: #0f172a;
-    position: relative;
-    padding-bottom: 10px;
-    margin-bottom: 1.5rem;
+/* Títulos das seções */
+.titulo-secao {
+  color: #1b365d;
+  border-left: 5px solid #e67e22;
+  padding-left: 12px;
 }
 
-.section-title::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 60px;
-    height: 4px;
-    background-color: #0284c7;
-    border-radius: 2px;
-}
-
-.section-title.text-center::after {
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-/* Cards personalizados */
+/* Cards organizados */
 .card-ets {
-    border: none;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-    height: 100%;
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-top: 4px solid #1b365d;
+  border-radius: 10px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-top-color 0.25s ease;
 }
 
 .card-ets:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(15, 23, 42, 0.12);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  border-top-color: #e67e22;
 }
 
-.card-borda-azul {
-    border-left: 4px solid #0284c7;
+.card-img-top {
+  height: 185px;
+  object-fit: cover;
 }
 
-/* Caixa de Opinião */
-.opiniao-box {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-    color: #f8fafc;
-    border-radius: 16px;
-    padding: 2rem;
-    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.15);
+/* Efeito de transição nos textos */
+.texto-transicao {
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.texto-transicao:hover {
+  color: #1b365d !important;
+  transform: translateX(4px);
+}
+
+/* Botões */
+.btn-rodovia {
+  background-color: #e67e22;
+  border-color: #e67e22;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.btn-rodovia:hover {
+  background-color: #cf6d17;
+  border-color: #cf6d17;
+  color: #ffffff;
+}
+
+.btn-azul-ets {
+  border: 1px solid #1b365d;
+  color: #1b365d;
+  font-weight: 600;
+}
+
+.btn-azul-ets:hover {
+  background-color: #1b365d;
+  color: #ffffff;
 }
 
 /* Rodapé */
-footer {
-    background-color: #0f172a;
-    color: #94a3b8;
-    margin-top: auto;
+.rodape-ets {
+  background-color: #1b365d;
+  color: #ffffff;
+  border-top: 3px solid #e67e22;
+}
+
+@media (max-width: 768px) {
+  .banner-img {
+    height: 300px;
+  }
 }
